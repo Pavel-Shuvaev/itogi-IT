@@ -3,3 +3,29 @@
 // [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 // [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 // [“Russia”, “Denmark”, “Kazan”] → []
+//---------------------------------------------------------------------------------------
+string[] array = new string[6] { "“hello”", "“Denmark”", "“world”", "“:-)”", "“1234”", "“-2”" };
+int count = 0;
+Console.Write("Задан массив из строк: [");
+for (int m = 0; m < array.Length; m++)
+{
+    Console.Write($"{array[m]}, ");
+    if (array[m].Length < 6) // 6, потому как использовал ковычки, как в примере
+    {
+        count++;
+    }
+}
+Console.WriteLine("]");
+string[] array2 = new string[count];
+int n = 0;
+Console.Write("→ Массив из строк, длина которых меньше, либо равна 3 символам: ["); 
+for (int m = 0; m < array.Length; m++)
+{
+    if (array[m].Length < 6) // 6, потому как использовал ковычки, как в примере
+    {
+        array2[n] = array[m];
+        Console.Write($"{array2[n]}, ");
+        n++;
+    }
+}
+Console.WriteLine("]");
